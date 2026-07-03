@@ -1,6 +1,6 @@
 ---
 name: implement
-description: Use this skill ONLY when the user explicitly signals they want implementation to proceed. TRIGGER keywords include "구현해", "구현 진행", "진행해", "implement", "make it", "go ahead", "그래 진행해", "ok 진행", "코딩해", "코드 작성해", "build it". Do NOT auto-invoke without explicit user signal — implementation requires user approval per plan-verify outcome. This skill is a BLOCKING REQUIREMENT once triggered — invoke before writing any code.
+description: Use this skill ONLY when the user explicitly signals they want implementation (code writing) to proceed. TRIGGER keywords must be implementation-specific — "구현해", "구현 진행", "구현 시작", "구현해줘", "implement", "make it", "build it", "code it", "코딩해", "코드 작성해". Do NOT trigger on generic approval words like "진행해", "go ahead", "ok" — those are too broad and often appear after plan-verify or in other flows. Do NOT auto-invoke without explicit user signal — implementation requires user approval per plan-verify outcome. This skill is a BLOCKING REQUIREMENT once triggered — invoke before writing any code.
 ---
 
 # 구현

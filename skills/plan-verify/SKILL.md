@@ -1,6 +1,6 @@
 ---
 name: plan-verify
-description: Use this skill whenever the user asks to verify, check, review, or validate a plan. TRIGGER keywords include "plan 검증", "plan 확인", "plan 검토", "체크해", "검토해", "베스트 plan 인지", "완벽해", "확실해", "빠진 거 없어", "오버한 거 없어", "테스트 충분해", "review plan", "is this best", "anything missing". Also auto-invoke right after plan-create finishes. This skill is a BLOCKING REQUIREMENT — invoke it before answering any verification question.
+description: Use this skill whenever the user asks to verify, check, review, or validate a plan. TRIGGER keywords must reference "plan" explicitly to avoid confusion with other verification contexts — "plan 검증", "plan 확인", "plan 검토", "plan 체크해", "베스트 plan 인지", "빠진 거 없어", "오버한 거 없어", "테스트 충분해", "review plan", "is this best", "anything missing". Do NOT trigger on generic verification words like "체크해", "검토해", "완벽해", "확실해" without "plan" context — those appear too often in unrelated conversations. Also auto-invoke right after plan-create finishes. This skill is a BLOCKING REQUIREMENT — invoke it before answering any verification question.
 ---
 
 # Plan 검증

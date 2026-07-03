@@ -1,6 +1,6 @@
 ---
 name: find-cause
-description: Use this skill whenever the user reports a problem, error, unexpected behavior, or asks to find the cause of something. TRIGGER keywords include "디버깅", "디버그해", "원인 파악", "원인 찾아", "왜 안 돼", "왜 안 나와", "에러 나", "에러야", "버그 찾아", "버그야", "이상해", "이상하게", "잘못됐어", "안 됨", "fail", "broken", "not working", "why is this", "what's wrong". Also use when user shares an error screenshot, log snippet, or unexpected output. (옛 이름 `debug`는 Claude Code reserved name과 충돌해 Skill 도구 호출이 차단됐음 — issue #14864. 그래서 `find-cause`로 변경. Skill 이름 지을 때 참고.) This skill is a BLOCKING REQUIREMENT — invoke it before generating any diagnosis or fix.
+description: Use this skill whenever the user reports a problem, error, unexpected behavior, or asks to find the cause of something. TRIGGER keywords include "디버깅", "디버그해", "원인 파악", "원인 찾아", "왜 안 돼", "왜 안 나와", "에러 나", "에러야", "버그 찾아", "버그야", "이상해", "잘못됐어", "fail", "broken", "not working", "why is this", "what's wrong". Also use when user shares an error screenshot, log snippet, or unexpected output. Do NOT trigger on generic phrases like "안 됨" or "이상하게" alone — those appear in unrelated contexts (decision statements, adverbial usage) and cause false positives. (옛 이름 `debug`는 Claude Code reserved name과 충돌해 Skill 도구 호출이 차단됐음 — issue #14864. 그래서 `find-cause`로 변경. Skill 이름 지을 때 참고.) This skill is a BLOCKING REQUIREMENT — invoke it before generating any diagnosis or fix.
 ---
 
 # 디버깅
