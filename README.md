@@ -1,6 +1,6 @@
 # claude-config-starter
 
-Claude Code 를 여러 프로젝트에서 안정적으로 쓰기 위해 시행착오 끝에 정착시킨 룰의 일반화 버전입니다. user-level `CLAUDE.md` + 5개 핵심 skill (기획, 검증, 구현, 배포, 디버깅) 을 담고 있고, 리서치 프로젝트용 `research-template/CLAUDE.md` 도 같이 들어있습니다.
+Claude Code 를 여러 프로젝트에서 안정적으로 쓰기 위해 시행착오 끝에 정착시킨 룰의 일반화 버전입니다. user-level `CLAUDE.md` + 5개 핵심 skill (기획, 검증, 구현, 배포, 문제 해결) 을 담고 있고, 리서치 프로젝트용 `research-template/CLAUDE.md` 도 같이 들어있습니다.
 
 ## 이건 시작점입니다
 
@@ -15,21 +15,20 @@ MIT License. 자유 재사용·재배포·수정 가능. 자세한 사항은 [LI
 Claude Code 시작 가이드 3 본문 챕터 4 의 프롬프트를 그대로 Claude 에게 던지면 자동 처리됩니다:
 
 ```
-github.com/jbitize/claude-config-starter 를 내 GitHub 계정으로
-fork 한 후 그 fork 한 곳을 ~/Code/claude-config-starter 로
-clone 해줘. 내 사적 정보가 들어갈 가능성이 있으니 fork 는
-private 으로 만들어줘. 그 다음 안의 CLAUDE.md 와 skills/ 폴더를
-~/.claude/ 에 symlink 로 연결해줘.
+github.com/jbitize/claude-config-starter 저장소에 있는
+CLAUDE.md 파일과 skills/ 폴더 안 파일들을 내 컴퓨터의
+~/.claude/ 위치로 복사해줘. 기존 ~/.claude/CLAUDE.md 랑
+skills/ 폴더가 있으면 backup 해두고 진행. 다 되면 VS Code
+를 재시작하는 방법도 알려줘.
 ```
 
-Claude 가 `gh repo fork --clone=false`, private 변경, git clone, symlink, 기존 파일 backup 까지 자동 처리합니다. PC (Windows) 는 symlink 대신 PowerShell 의 `New-Item -ItemType SymbolicLink` 또는 폴더 복사로 처리 — Claude 가 OS 감지 후 분기.
+Claude 가 GitHub 저장소에서 파일 다운로드 → `~/.claude/` 에 복사 → 기존 파일 backup → VS Code 재시작 안내까지 자동 처리합니다.
 
-⚠️ **중요**: fork 는 반드시 private 으로 만들어야 합니다. 본인이 CLAUDE.md 에 사적 메모리 (친구 비밀, 학교 자료 등) 를 추가한 후 public 으로 두면 인터넷에 공개됩니다.
+PC (Windows) 환경도 파일 복사만 하니 그대로 진행 가능. 관리자 권한 필요 없어요.
 
-## Daily sync workflow
+## 업데이트가 필요하면
 
-- 본인 수정 사항 저장 — `git commit + git push` (본인 private fork 에)
-- upstream 저장소 업데이트 받기 — `git pull upstream main`. Conflict 발생 시 Claude 에 "conflict 해결해줘" 한 마디.
+이 저장소가 나중에 개선되면 같은 프롬프트를 한 번 더 던지시면 됩니다. Claude 가 최신 파일로 다시 복사해줘요. 본인이 수정한 CLAUDE.md 는 backup 폴더에 남으니 필요한 부분을 새 CLAUDE.md 에 다시 합칠 수 있습니다.
 
 ## Skill 5개 트리거
 
