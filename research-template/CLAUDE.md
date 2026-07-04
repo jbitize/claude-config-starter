@@ -1,6 +1,6 @@
 # 리서치 프로젝트 CLAUDE.md
 
-이 파일은 리서치 프로젝트 폴더 (예: 가이드 1 에서 만든 `claude-project` 안의 리서치 작업 영역) 에 두는 project-level CLAUDE.md 다. user-level CLAUDE.md 의 룰 위에 리서치 작업 특화 룰이 추가된다.
+이 파일은 프로젝트 루트 (예: 가이드 1 에서 만든 `claude-project/CLAUDE.md`) 에 두는 project-level CLAUDE.md 다. 프로젝트 어디서 작업하든 자동 로드된다. 리서치 관련 룰은 리서치 시작 트리거가 잡힐 때만 발동하고, 게임·노트 등 다른 작업에는 영향을 주지 않는다. user-level CLAUDE.md 의 룰 위에 리서치 작업 특화 룰이 추가된다.
 
 본인 리서치 컨텍스트에 맞게 자유롭게 수정하라. 특히 민감 자료 예시 (아래 §신규 리서치 폴더 생성 규칙 참조) 는 본인이 다루는 주제에 맞게 바꾸는 게 자연.
 
@@ -110,6 +110,31 @@
 - **width 640px** — retina 2x 대비 표시 폭 320px 가 표준
 - **JPG quality 85** — 사진 파일 크기 대폭 감소 (14 MB → 1 MB 흔함)
 - 원본 그대로 업로드 절대 금지 (페이지 로딩 심각히 느려짐)
+
+## 🎨 리포트 스타일 자산 참조 (필수)
+
+리서치 리포트 HTML 을 빌드할 때 다음 자산을 참조한다. 자산 파일은 프로젝트 저장소의 `research/` 서브폴더에 있고, Render 정적 배포 시 사이트 URL 하위 경로 (`/research/...`) 로 접근 가능하다.
+
+### 라이트 테마 CSS (필수)
+
+리포트 HTML `<head>` 안에 다음 링크 삽입:
+
+```html
+<link rel="stylesheet" href="/research/report-style.css">
+```
+
+### 이미지 라이트박스 스크립트
+
+리포트에 이미지 갤러리가 있으면 `</body>` 직전에 다음 스크립트 삽입 (이미지 클릭 시 확대 표시):
+
+```html
+<script src="/research/lightbox-init.js"></script>
+```
+
+### 경로 룰
+
+- 절대 경로 `/research/...` 기준으로만 참조한다. 상대 경로 (`../report-style.css` 등) 는 사용 금지 — 리서치 폴더 위치나 슬러그가 바뀔 때 링크가 깨진다.
+- Render 정적 배포에서 사이트 루트 도메인 하위 `/research/` 경로가 그대로 서빙되니 이 절대 경로 방식이 안정적이다.
 
 ## 🔒 리포트 수정 규칙 (필수)
 
